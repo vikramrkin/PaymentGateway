@@ -32,7 +32,7 @@ namespace Services
                 }
                 else
                 {
-                    response = new RefundResponse(authorization.Currency, refundRequest.Amount) {  IsError = true, Message = $"{authorization.CardNumber} - Failed to process refund as refund amount is higher than total requested amount"};
+                    response = new RefundResponse(authorization.Currency, refundRequest.Amount) {  IsError = true, Message = $"{authorization.CardNumber} - Failed to process refund as amount is higher than captured amount"};
                 }
 
                 return response;

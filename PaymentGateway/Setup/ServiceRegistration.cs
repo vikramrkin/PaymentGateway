@@ -11,6 +11,7 @@ namespace PaymentGateway.Setup
             services.AddTransient<ICaptureService, CaptureService>();
             services.AddTransient<IRefundService, RefundService>();
             services.AddTransient<IVoidService, VoidService>();
+            services.AddTransient<ILuhnCheckService, LuhnCheckService>();
         }
     }
 }
