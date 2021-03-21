@@ -15,32 +15,32 @@ namespace Services
 
         public RefundResponse Refund(RefundRequest refundRequest)
         {
-            RefundResponse respose;
+            RefundResponse response;
 
             if (_repo.TryGetAuthorization(refundRequest.AuthorizationId, out var authorization))
             {
                 if (authorization.IsVoid)
                 {
-                    respose = new RefundResponse(authorization.Currency, authorization.AmountAuthorized) { IsError = true, Message = $"{authorization.CardNumber} - Refund failed as transaction is void"};
-                    return respose;
+                    response = new RefundResponse(authorization.Currency, authorization.AmountAuthorized) { IsError = true, Message = $"{authorization.CardNumber} - Refund failed as transaction is void"};
+                    return response;
                 }
                 
-                if (refundRequest.Amount < authorization.AmountAuthorized)
+                if (refundRequest.Amount <= authorization.AmountAuthorized)
                 {
                     _repo.UpdateRefund(refundRequest.AuthorizationId, refundRequest.Amount);
-                    respose = new RefundResponse(authorization.Currency, refundRequest.Amount) { Message = $"{authorization.CardNumber} - Successfully processed refund for {authorization.Currency} {refundRequest.Amount}"};
+                    response = new RefundResponse(authorization.Currency, refundRequest.Amount) { Message = $"{authorization.CardNumber} - Successfully processed refund for {authorization.Currency} {refundRequest.Amount}"};
                 }
                 else
                 {
-                    respose = new RefundResponse(authorization.Currency, refundRequest.Amount) {  IsError = true, Message = $"{authorization.CardNumber} - Failed to process refund as refund amount is higher than total requested amount"};
+                    response = new RefundResponse(authorization.Currency, refundRequest.Amount) {  IsError = true, Message = $"{authorization.CardNumber} - Failed to process refund as refund amount is higher than total requested amount"};
                 }
 
-                return respose;
+                return response;
             }
             else
             {
-                respose = new RefundResponse(string.Empty, refundRequest.Amount) { IsError = true, Message = $"Refund failed. Invalid authorization Id: {refundRequest.AuthorizationId}" };
-                return respose;
+                response = new RefundResponse(string.Empty, refundRequest.Amount) { IsError = true, Message = $"Refund failed. Invalid authorization Id: {refundRequest.AuthorizationId}" };
+                return response;
             }
         }
     }

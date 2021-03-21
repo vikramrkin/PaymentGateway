@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway", "PaymentGateway\PaymentGateway.csproj", "{67AE9D38-D126-4D61-8289-ADA85253CB68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{51CC96A6-3C0E-4CB2-9677-EBD943A66B7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{51CC96A6-3C0E-4CB2-9677-EBD943A66B7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Dto\Dto.csproj", "{0C1A2099-A4D6-4FCF-8BD0-9B295CB4A215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dto", "Dto\Dto.csproj", "{0C1A2099-A4D6-4FCF-8BD0-9B295CB4A215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{8B477DF4-966D-4DFB-A188-3CBB15BCF24E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{8B477DF4-966D-4DFB-A188-3CBB15BCF24E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTest", "ServiceTest\ServiceTest.csproj", "{923B3533-3A86-4220-874E-C70C22C8E54A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8B477DF4-966D-4DFB-A188-3CBB15BCF24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B477DF4-966D-4DFB-A188-3CBB15BCF24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B477DF4-966D-4DFB-A188-3CBB15BCF24E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923B3533-3A86-4220-874E-C70C22C8E54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923B3533-3A86-4220-874E-C70C22C8E54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923B3533-3A86-4220-874E-C70C22C8E54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923B3533-3A86-4220-874E-C70C22C8E54A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

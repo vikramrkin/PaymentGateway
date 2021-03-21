@@ -15,26 +15,26 @@ namespace Services
 
         public VoidResponse VoidTransaction(string authorizationId)
         {
-            VoidResponse respose;
+            VoidResponse response;
 
             if (_repo.TryGetAuthorization(authorizationId, out var authorization))
             {
                 if (authorization.IsVoid)
                 {
-                    respose = new VoidResponse(authorization.Currency, authorization.AmountCaptured) {  IsError = true, Message = $"{authorization.CardNumber}: Unable to void transaction as it is already void"};
+                    response = new VoidResponse(authorization.Currency, authorization.AmountCaptured) {  IsError = true, Message = $"{authorization.CardNumber}: Unable to void transaction as it is already void"};
                 }
                 else
                 {
                     _repo.VoidTransaction(authorizationId);
-                    respose = new VoidResponse(authorization.Currency, authorization.AmountCaptured) { Message = $"{authorization.CardNumber}: Transaction voided successfully"};
+                    response = new VoidResponse(authorization.Currency, authorization.AmountCaptured) { Message = $"{authorization.CardNumber}: Transaction voided successfully"};
                 }
             }
             else
             {
-                respose = new VoidResponse(string.Empty, -1) {  IsError = true, Message = $"Invalid authorization Id - {authorizationId}"};
+                response = new VoidResponse(string.Empty, -1) {  IsError = true, Message = $"Invalid authorization Id - {authorizationId}"};
             }
 
-            return respose;
+            return response;
         }
     }
 

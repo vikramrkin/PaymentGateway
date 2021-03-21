@@ -20,7 +20,7 @@ namespace Services
             {
                 if (IsCaptureAllowed(authorization))
                 {
-                    if (authorization.AmountCaptured + captureRequest.Amount < authorization.AmountAuthorized)
+                    if (authorization.AmountCaptured + captureRequest.Amount <= authorization.AmountAuthorized)
                     {
                         _repo.UpdateCapture(captureRequest.AuthorizationId, captureRequest.Amount);
                         respose = new CaptureResponse(authorization.Currency, captureRequest.Amount) { Message = $"{authorization.CardNumber} - Successfully captured {authorization.Currency} {captureRequest.Amount}" };
