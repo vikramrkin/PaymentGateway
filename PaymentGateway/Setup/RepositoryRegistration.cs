@@ -9,7 +9,7 @@ namespace PaymentGateway.Setup
     {
         public static void AddRepositoryServices(this IServiceCollection services)
         {
-            services.AddSingleton<IAuthorizationRepo, AuthorizationRepo>();
+            services.AddSingleton<IPaymentGatewayRepo, PaymentGatewayRepo>();
             services.AddSingleton<IUniqueIdGenerator, UniqueIdGenerator>();
         }
     }

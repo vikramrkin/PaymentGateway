@@ -1,10 +1,12 @@
 ﻿namespace Dto
 {
-    public class AuthorizeResponse
+    public class AuthorizeResponse : ResponseBase
     {
-        public string AuthorizationId { get; set; }
-        public string Currency { get; set; }
-        public double Amount { get; set; }
-        public string ErrorMessage { get; set; }
+        public AuthorizeResponse(string authorizationId, string currency, double amountAvailable) : base(currency, amountAvailable)
+        {
+            AuthorizationId = authorizationId;
+        }
+
+        public string AuthorizationId { get; }
     }
 }

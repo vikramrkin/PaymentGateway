@@ -1,9 +1,10 @@
 ﻿namespace Dto
 {
-    public class CaptureResponse
+    public class CaptureResponse : ResponseBase
     {
-        public string Currency { get; set; }
-        public double Amount { get; set; }
-        public string StatusMessage { get; set; }
+        public CaptureResponse(string currency, double amount) : base(currency, amount)
+        {
+            
+        }
     }
 }

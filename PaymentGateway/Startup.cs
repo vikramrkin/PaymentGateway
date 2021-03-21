@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using PaymentGateway.Filters;
 using PaymentGateway.Setup;
 
 namespace PaymentGateway
@@ -25,6 +26,11 @@ namespace PaymentGateway
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PaymentGateway", Version = "v1" });
             });
+
+            // services.AddMvc(options =>
+            // {
+            //     options.Filters.Add<ResultFormatterFilter>();
+            // });
 
             services.AddRepositoryServices();
             services.AddPaymentGatewayServices();

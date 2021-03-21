@@ -9,6 +9,8 @@ namespace PaymentGateway.Setup
         {
             services.AddTransient<IAuthorizeService, AuthorizeService>();
             services.AddTransient<ICaptureService, CaptureService>();
+            services.AddTransient<IRefundService, RefundService>();
+            services.AddTransient<IVoidService, VoidService>();
         }
     }
 }
