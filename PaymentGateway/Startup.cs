@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using PaymentGateway.Filters;
+using PaymentGateway.Middleware;
 using PaymentGateway.Setup;
 
 namespace PaymentGateway
@@ -45,6 +46,8 @@ namespace PaymentGateway
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PaymentGateway v1"));
             }
+
+            app.UseMiddleware<RequestLoggingMiddleware>();
 
             app.UseRouting();
 

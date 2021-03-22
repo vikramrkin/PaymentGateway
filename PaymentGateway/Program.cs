@@ -36,7 +36,7 @@ namespace PaymentGateway
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();
-                    logging.SetMinimumLevel(LogLevel.Trace);
+                    logging.SetMinimumLevel(LogLevel.Trace);    //TODO: Get this from app settings file
                 })
                 .UseNLog();
     }
