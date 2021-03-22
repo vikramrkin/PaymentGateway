@@ -18,3 +18,17 @@ This project has unit tests for classes in Services project. Core of the busines
 
 ## How to run
 [Swagger](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0) is used in this project to help with documentation/running the project.
+
+From Visual Studio, press F5 or Ctrl+F5 to see the Swagger UI as shown below:
+
+![alt-text](https://github.com/vikramrkin/PaymentGateway/blob/master/DocImages/1.png)
+
+
+Chose the end point you want to call, fill out the parameters and press Execute button:
+
+![alt-text](https://github.com/vikramrkin/PaymentGateway/blob/master/DocImages/2.png)
+
+
+End point is called and results will shown as below:
+
+![alt-text](https://github.com/vikramrkin/PaymentGateway/blob/master/DocImages/3.PNG)
