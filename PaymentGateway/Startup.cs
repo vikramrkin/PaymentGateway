@@ -27,10 +27,10 @@ namespace PaymentGateway
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PaymentGateway", Version = "v1" });
             });
 
-            // services.AddMvc(options =>
-            // {
-            //     options.Filters.Add<ResultFormatterFilter>();
-            // });
+            services.AddMvc(options =>
+            {
+                options.Filters.Add<ResultFormatterFilter>();
+            });
 
             services.AddRepositoryServices();
             services.AddPaymentGatewayServices();
