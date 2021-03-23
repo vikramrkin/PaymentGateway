@@ -18,6 +18,9 @@ namespace ServiceTest
         [InlineData("3530111333300000")]
         [InlineData("6331101999990016")]
         [InlineData("5610591081018250")]
+        [InlineData("4000 0000 0000 0119")]
+        [InlineData("4000 0000 0000 0259")]
+        [InlineData("4000 0000 0000 3238")]
         public void ValidCardNumberReturnsTrue(string cardNumber)
         {
             //Arrange
