@@ -8,9 +8,9 @@ The solution is divided into 5 projects:
 This is the main project which has ASP.Net Core end points implemented in it. This is the starting point and as such setup the Web Host, services in container, logging, routing etc.
 This references all other projects to complete the requirement of building the payment gateway API.
 ### 2. Dto
-This is project holds Data Transfer Objects which are used in other projects.
+This is project holds Data Transfer Objects which are used to receive incoming data and send the responses.
 ### 3. Services
-This is the project which has the business logic in it. All the server side validations happen here and PaymentGateway project calls into this directly.
+This is the project which has the business logic in it. All the server side validations happen here and PaymentGateway project calls into this directly. This project is also responsible to call the persistance layer to read/write data from data store.
 ### 4. Repository
 This project is responsible for interacting with persistance store. For the sake of this exercise, the persistance store is just a ConcurrentDictionary.
 ### 5. ServiceTests
@@ -44,7 +44,7 @@ End point is called and results will shown as below:
 
 Current solution was built in around 3 hours of time (including documentation). Some of the below features/enhancements could have been done if more time was spent on this:
 
-1. Instead of a dictionary, use something like [LiteDb](https://www.litedb.org/)
-2. Add checks for credit card end date and CVV. These fields are not used at present
+1. Instead of a dictionary, use something like [LiteDb](https://www.litedb.org/).
+2. Add checks for credit card end date and CVV. These fields are not used at present.
 3. Current design has made the DTO layer common to all projects which is not ideal. To maintain full separation of concerns, use different set of objects and use AutoMapper to build these objects.
-4. Implement client authentication using one of the several ways in ASP.Net Core
+4. Implement client authentication using one of the several ways in ASP.Net Core.
